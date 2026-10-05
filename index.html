@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coluna e ortobiológicos — Ebook grátis | Proregen</title>
+  <meta name="description" content="Baixe o guia gratuito Coluna e ortobiológicos da Proregen. Informação clara sobre dor nas costas, PRP e tratamentos regenerativos. Por Dr. André Kruel.">
+  <meta name="theme-color" content="#66B2E0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/logo-h-light.svg" type="image/svg+xml">
+  <meta property="og:title" content="Coluna e ortobiológicos — Ebook grátis | Proregen">
+  <meta property="og:description" content="Um guia simples sobre dor nas costas e no pescoço e sobre PRP e tratamentos preparados com recursos do seu próprio corpo.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#topo" aria-label="Proregen — início">
+        <!-- logo-h-light = dark charcoal mark for light backgrounds -->
+        <img src="assets/logo-h-light.svg" alt="Proregen" width="140" height="36">
+      </a>
+      <a class="header-cta" href="#formulario">Baixar ebook</a>
+    </div>
+  </header>
+
+  <main id="topo">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Guia gratuito para pacientes</p>
+          <h1 id="hero-title">Dor na coluna? Entenda com clareza o que são os ortobiológicos.</h1>
+          <p class="hero-lead">
+            Um guia simples sobre dor nas costas e no pescoço — e sobre o PRP e outros
+            tratamentos preparados com recursos do seu próprio corpo. Linguagem de
+            consultório, sem pressa e sem promessas milagrosas.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#formulario">Baixar o ebook grátis</a>
+            <a class="btn btn-secondary" href="#livro">Conhecer o livro</a>
+          </div>
+          <p class="hero-note">PDF gratuito · Escrito pelo Dr.&nbsp;André Kruel · CRM-RS&nbsp;23627</p>
+        </div>
+
+        <aside class="hero-card" aria-hidden="true">
+          <div class="ebook-visual">
+            <img class="ev-logo" src="assets/logo-h-dark.svg" alt="">
+            <div>
+              <p class="ev-label">Guia para pacientes</p>
+              <h2>Coluna e ortobiológicos</h2>
+              <p class="ev-sub">Dor nas costas, PRP e o que a ciência mostra — em linguagem clara.</p>
+            </div>
+            <p class="ev-footer">Proregen · Outubro 2026</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Lead form + thank-you -->
+    <section class="form-section" id="formulario" aria-labelledby="form-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="form-title">Receba o ebook no seu e-mail</h2>
+          <p>Preencha os dados abaixo. Em seguida, o PDF fica disponível para download imediato.</p>
+        </div>
+
+        <div id="form-wrap">
+          <form class="form-card" id="lead-form" novalidate>
+            <!--
+              PLACEHOLDER wiring:
+              When googleFormAction + entries.* are set in config.js,
+              app.js POSTs to Google Forms (fetch no-cors / hidden iframe),
+              then always reveals the thank-you + PDF download.
+            -->
+            <div class="field">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" autocomplete="name" required placeholder="Seu nome e sobrenome" maxlength="120">
+              <span class="field-error" id="err-nome" hidden></span>
+            </div>
+
+            <div class="field">
+              <label for="whatsapp">WhatsApp</label>
+              <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" inputmode="numeric" required placeholder="(54) 99999-9999" maxlength="16">
+              <span class="hint">Com DDD — usamos só para contato clínico, sem spam.</span>
+              <span class="field-error" id="err-whatsapp" hidden></span>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" autocomplete="email" required placeholder="voce@email.com" maxlength="160">
+              <span class="field-error" id="err-email" hidden></span>
+            </div>
+
+            <div class="field">
+              <label for="interesse">Principal interesse</label>
+              <select id="interesse" name="interesse" required>
+                <option value="" disabled selected>Selecione…</option>
+                <option value="Coluna">Coluna</option>
+                <option value="Joelho">Joelho</option>
+                <option value="Outro">Outro</option>
+              </select>
+              <span class="field-error" id="err-interesse" hidden></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+              Baixar o ebook grátis
+            </button>
+            <p class="form-privacy">Seus dados ficam sob cuidado da Proregen. Não enviamos spam.</p>
+          </form>
+        </div>
+
+        <!-- Thank-you state (same page) -->
+        <div class="thank-you" id="thank-you" hidden role="status" aria-live="polite">
+          <div class="ty-icon" aria-hidden="true">✓</div>
+          <h2>Pronto — o ebook é seu</h2>
+          <p>Obrigado pelo interesse. Clique abaixo para baixar o PDF agora. Se quiser ir além, o livro <em>Dói Aqui?</em> aprofunda o tema com a mesma linguagem clara.</p>
+          <div class="ty-actions">
+            <a class="btn btn-primary" id="download-ebook" href="assets/Ebook-Proregen-Coluna-Ortobiologicos.pdf" download>
+              Baixar PDF — Coluna e ortobiológicos
+            </a>
+            <a class="btn btn-secondary" data-wa data-wa-msg="Olá! Baixei o ebook Coluna e ortobiológicos e gostaria de conversar.">
+              Falar no WhatsApp
+            </a>
+          </div>
+          <div class="ty-book">
+            <img src="assets/doi-aqui-capa.jpg" alt="Capa do livro Dói Aqui?" width="90" height="109">
+            <div>
+              <h3>Quer ir além do guia?</h3>
+              <p>O livro <strong>Dói Aqui?</strong> traz uma conversa completa sobre dor musculoesquelética e medicina regenerativa.</p>
+              <a class="btn btn-secondary" id="book-cta-thanks" href="https://www.editoragente.com.br/doi-aqui--7520/p" target="_blank" rel="noopener noreferrer">
+                Conhecer o livro Dói Aqui?
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What they'll get -->
+    <section class="benefits" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="benefits-title">O que você encontra no ebook</h2>
+          <p>Conteúdo pensado para a conversa de consultório — direto e acessível.</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <span class="benefit-num" aria-hidden="true">1</span>
+            <h3>Por que a coluna dói</h3>
+            <p>Explicações claras sobre dor nas costas e no pescoço — o que é comum, o que merece atenção e quando procurar ajuda.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-num" aria-hidden="true">2</span>
+            <h3>O que são ortobiológicos</h3>
+            <p>PRP e tratamentos preparados com recursos do próprio corpo: o que são, quando entram no plano e o que a ciência mostra hoje.</p>
+          </article>
+          <article class="benefit-card">
+            <span class="benefit-num" aria-hidden="true">3</span>
+            <h3>Do contato à recuperação</h3>
+            <p>Como é o caminho clínico, da avaliação cuidadosa ao pós-procedimento — sempre como parte de um plano completo, nunca isolado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Book upsell -->
+    <section class="book-offer" id="livro" aria-labelledby="book-title">
+      <div class="container book-grid">
+        <img
+          class="book-cover"
+          src="assets/doi-aqui-capa.jpg"
+          alt="Capa do livro Dói Aqui?, de Dr. André Kruel"
+          width="220"
+          height="267"
+          loading="lazy"
+        >
+        <div class="book-copy">
+          <p class="eyebrow">Livro · Editora Gente</p>
+          <h2 id="book-title">Dói Aqui? — a conversa completa sobre a dor</h2>
+          <p>
+            Se o ebook abre a porta, o livro aprofunda: uma leitura acolhedora sobre dor
+            musculoesquelética, opções de cuidado e o papel da medicina regenerativa —
+            com a mesma honestidade clínica, sem promessas de cura.
+          </p>
+          <div class="book-actions">
+            <a
+              class="btn btn-primary"
+              id="book-cta"
+              href="https://www.editoragente.com.br/doi-aqui--7520/p"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Conhecer o livro Dói Aqui?
+            </a>
+            <a class="btn btn-secondary" href="#formulario">Baixar o ebook grátis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="footer-logo" href="https://proregen.com.br" target="_blank" rel="noopener noreferrer" aria-label="Proregen">
+          <img src="assets/logo-h-dark.svg" alt="Proregen" width="130" height="32">
+        </a>
+        <div class="footer-meta">
+          <div><strong>Dr.&nbsp;André Kruel</strong></div>
+          <div>CREMERS / CRM-RS 23627 · RQE 14323</div>
+          <div>
+            <a href="https://proregen.com.br" target="_blank" rel="noopener noreferrer">proregen.com.br</a>
+            ·
+            <a data-wa data-wa-msg="Olá! Vim pela página do ebook Coluna e ortobiológicos.">WhatsApp (54)&nbsp;99689-1295</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-disclaimer">
+        Este material tem caráter educativo e não substitui consulta médica.
+        Indicações de tratamentos regenerativos (incluindo PRP e outros ortobiológicos)
+        dependem de avaliação individualizada. Parte das aplicações permanece em
+        campo experimental ou sob critérios clínicos específicos — converse sempre
+        com o médico responsável pelo seu caso. Proregen / Dr.&nbsp;André Kruel.
+      </p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
