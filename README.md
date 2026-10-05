@@ -108,3 +108,11 @@ Fonte: **Sora** (Google Fonts CDN).
 ## Hospedagem
 
 Pasta pronta para GitHub Pages, Netlify Drop, Surge, Cloudflare Pages, etc.
+
+## Produção (ligado)
+
+- LP: https://kruelandre-jpg.github.io/proregen-lp-ebook-coluna/
+- Form (editar): https://docs.google.com/forms/d/1xPzUMzYMUc2JH0WI6x0QzigushSWmcTtqxx0IJVGjRc/edit
+- Form (público): https://docs.google.com/forms/d/e/1FAIpQLSdr3QukBusZnSz9PNobm4qA292Ltv4Jv0QI09jZ5-Vs6wkXRg/viewform
+- Planilha respostas: https://docs.google.com/spreadsheets/d/19KvaI8NpkFN5sy23o-YbOq5dU86pzOh5xXNGKq9RAIY/edit
+- Entries: nome entry.212396162 · whatsapp entry.1389541124 · email entry.471275429 · interesse entry.30545821
