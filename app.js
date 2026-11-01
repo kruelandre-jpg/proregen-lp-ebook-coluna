@@ -97,59 +97,23 @@
     return params;
   }
 
+  // Unificado 2026-11-01: envia para o Web App "Leads - Ebook PRP Proregen" (-> Zapier -> Notion CRM).
+  // Sem consentimento LGPD para dado de saude nesta pagina: queixa/detalhe vao vazios.
   function submitToGoogleForms(data) {
-    var action = (cfg.googleFormAction || '').trim();
-    // PLACEHOLDER gate: skip network call until real formResponse URL is set
-    if (!action || action.indexOf('entry.') === 0 || action.indexOf('FORM_ID') !== -1) {
-      return Promise.resolve({ skipped: true });
-    }
-    var entries = cfg.entries || {};
-    var hasPlaceholders = Object.keys(entries).some(function (k) {
-      return !entries[k] || String(entries[k]).indexOf('XXX') !== -1;
-    });
-    if (hasPlaceholders) {
-      console.warn('[Proregen LP] Google Forms entry IDs still have PLACEHOLDER values (entry.XXX). Skipping POST.');
-      return Promise.resolve({ skipped: true });
-    }
-
-    var body = buildFormBody(data);
-
-    // Primary: no-cors fetch (opaque response; Google still records the submission)
-    return fetch(action, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: body.toString()
-    }).catch(function () {
-      // Fallback: hidden iframe form POST
-      return new Promise(function (resolve) {
-        var iframe = document.createElement('iframe');
-        iframe.name = 'gf-target-' + Date.now();
-        iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-
-        var f = document.createElement('form');
-        f.method = 'POST';
-        f.action = action;
-        f.target = iframe.name;
-        f.style.display = 'none';
-
-        body.forEach(function (value, key) {
-          var input = document.createElement('input');
-          input.type = 'hidden';
-          input.name = key;
-          input.value = value;
-          f.appendChild(input);
-        });
-
-        document.body.appendChild(f);
-        f.submit();
-        setTimeout(function () {
-          try { document.body.removeChild(f); document.body.removeChild(iframe); } catch (_) {}
-          resolve({ fallback: true });
-        }, 1500);
-      });
-    });
+    var url = (cfg.appsScriptUrl || '').trim();
+    if (!url) { return Promise.resolve({ skipped: true }); }
+    var params = new URLSearchParams();
+    params.append('nome', data.nome.trim());
+    params.append('whatsapp', digitsOnly(data.whatsapp));
+    params.append('email', data.email.trim());
+    params.append('cidade', '');
+    params.append('queixa', '');
+    params.append('detalhe', '');
+    params.append('consentimento_saude', 'Nao');
+    params.append('consentimento', 'Nao');
+    params.append('origem', cfg.origem || 'lp-ebook-coluna');
+    params.append('website', '');
+    return fetch(url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: params.toString() });
   }
 
   function revealThankYou() {

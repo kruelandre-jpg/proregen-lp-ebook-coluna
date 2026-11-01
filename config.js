@@ -3,7 +3,9 @@
  * Wired to Google Form + Sheet (kruel.andre@gmail.com)
  */
 window.LP_CONFIG = {
-  googleFormAction: 'https://docs.google.com/forms/d/e/1FAIpQLSdr3QukBusZnSz9PNobm4qA292Ltv4Jv0QI09jZ5-Vs6wkXRg/formResponse',
+  appsScriptUrl: 'https://script.google.com/macros/s/AKfycbw96-Ug1oJL-9uOluVOIH88Kj7piGsShf1J8r2Tjx93Tbl9NUqtJdYq5dApfdOlB48A/exec',
+  origem: 'lp-ebook-coluna',
+  // antigo Google Form desativado em 2026-11-01 (leads unificados na planilha Ebook PRP)
 
   entries: {
     nome: 'entry.212396162',
